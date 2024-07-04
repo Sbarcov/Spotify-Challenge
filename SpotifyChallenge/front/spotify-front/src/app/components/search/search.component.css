@@ -1,0 +1,24 @@
+h5{
+
+    font-size: 25px;
+    font-family: "Montserrat";
+    color: white;
+
+}
+
+p{
+    font-size: 25px;
+    font-family: "Montserrat";
+    color: white;
+}
+
+.card-img-top {
+    width: 80%;
+}
+.card-body{
+    background: rgb(33,33,33);
+}
+
+.list-group-item{
+    background: rgb(33,33,33);
+}
