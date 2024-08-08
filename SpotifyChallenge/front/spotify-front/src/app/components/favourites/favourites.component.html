@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div text-center>
+
+        <ul class="list-group text-center">
+            @for (track of tracks; track $index) {
+            <li class="list-group-item">
+                <div class="card col-5 mx-auto">
+                    <div class="card-body">
+                        <img [src]="track.imgurl" class="card-img-top">
+                        <h5 class="card-title my-4" style="color:rgb(255, 255, 255);">{{track.name}}</h5>
+                        <p class="card-text my-1" style="color:rgb(255, 255, 255);">{{track.artist}}</p>
+                        <p class="card-text my-1" style="color:rgb(255, 255, 255);">{{track.album}}</p>
+                    </div>
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
