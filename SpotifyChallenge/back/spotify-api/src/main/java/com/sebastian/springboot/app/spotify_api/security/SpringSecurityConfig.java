@@ -44,10 +44,10 @@ public class SpringSecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests((authz) -> authz
-                .requestMatchers(HttpMethod.GET, "/api/users").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/users").hasAnyRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/api/users/register").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/tracks/{username}").hasAnyRole("ADMIN", "USER")
-                .requestMatchers(HttpMethod.GET, "/api/tracks/save/{username}").hasAnyRole("ADMIN", "USER")
+                .requestMatchers(HttpMethod.POST, "/api/tracks/save/{username}").hasAnyRole("ADMIN", "USER")
                 .requestMatchers(HttpMethod.GET, "/api/spotify/gettoken").hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
